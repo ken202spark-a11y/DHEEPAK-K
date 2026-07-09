@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Advanced Visa Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    font-family:Arial;
+    margin:0;
+    background:#eef3f9;
+}
+
+header{
+    background:#003366;
+    color:white;
+    padding:15px;
+    text-align:center;
+}
+
+.container{
+    width:700px;
+    margin:30px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.2);
+}
+
+.step{
+    display:none;
+}
+
+.step.active{
+    display:block;
+}
+
+input,select{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+}
+
+button{
+    padding:10px 20px;
+    background:#003366;
+    color:white;
+    border:none;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    background:#0055aa;
+}
+
+.progress{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+}
+
+.progress div{
+    width:100%;
+    height:6px;
+    margin:2px;
+    background:#ccc;
+}
+
+.progress .active{
+    background:#003366;
+}
+
+.success{
+    text-align:center;
+    display:none;
+}
+
+.card{
+    background:#f7f9fc;
+    padding:10px;
+    margin:10px 0;
+    border-left:5px solid #003366;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>Advanced Online Visa System</h2>
+</header>
+
+<div class="container">
+
+<div class="progress">
+<div class="active"></div>
+<div></div>
+<div></div>
+</div>
+
+<!-- STEP 1 -->
+<div class="step active" id="step1">
+<h3>Step 1: Personal Info</h3>
+
+<input id="name" placeholder="Full Name">
+<input id="email" placeholder="Email">
+<input id="phone" placeholder="Phone">
+
+<button onclick="nextStep(2)">Next</button>
+</div>
+
+<!-- STEP 2 -->
+<div class="step" id="step2">
+<h3>Step 2: Passport Details</h3>
+
+<input id="passport" placeholder="Passport Number">
+<input type="date" id="expiry">
+
+<select id="country">
+<option>India</option>
+<option>USA</option>
+<option>UK</option>
+<option>Canada</option>
+</select>
+
+<button onclick="nextStep(1)">Back</button>
+<button onclick="nextStep(3)">Next</button>
+</div>
+
+<!-- STEP 3 -->
+<div class="step" id="step3">
+<h3>Step 3: Travel Details</h3>
+
+<select id="visa">
+<option>Tourist</option>
+<option>Business</option>
+<option>Student</option>
+<option>Work</option>
+</select>
+
+<input type="date" id="travelDate">
+
+<button onclick="submitApp()">Submit Application</button>
+</div>
+
+</div>
+
+<!-- SUCCESS SCREEN -->
+<div class="container success" id="success">
+
+<h2>🎉 Application Submitted</h2>
+
+<div class="card">
+Application ID: <b id="appId"></b>
+</div>
+
+<div class="card">
+Status: <span id="status">Under Review</span>
+</div>
+
+<button onclick="trackStatus()">Track Status</button>
+
+</div>
+
+<script>
+
+let currentStep = 1;
+
+function nextStep(step){
+
+document.getElementById("step"+currentStep).classList.remove("active");
+currentStep = step;
+document.getElementById("step"+currentStep).classList.add("active");
+
+updateProgress(step);
+}
+
+function updateProgress(step){
+let bars = document.querySelectorAll(".progress div");
+bars.forEach((b,i)=>{
+b.classList.remove("active");
+if(i < step) b.classList.add("active");
+});
+}
+
+function submitApp(){
+
+let id = "VISA" + Math.floor(Math.random()*100000);
+
+localStorage.setItem("appId", id);
+
+document.querySelector(".container").style.display="none";
+document.getElementById("success").style.display="block";
+
+document.getElementById("appId").innerText = id;
+
+simulateProcessing();
+}
+
+function simulateProcessing(){
+
+setTimeout(()=>{
+document.getElementById("status").innerText="Approved ✅";
+}, 4000);
+
+}
+
+function trackStatus(){
+alert("Your Application ID: " + localStorage.getItem("appId"));
+}
+
+</script>
+
+</body>
+</html>
