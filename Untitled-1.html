@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Common Tags Demo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        header, nav, main, section, article, aside, footer {
+            padding: 20px;
+            margin: 15px;
+            border-radius: 8px;
+            background: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid gray;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        form {
+            display: grid;
+            gap: 10px;
+            max-width: 500px;
+        }
+
+        input, textarea, select, button {
+            padding: 8px;
+        }
+
+        img {
+            max-width: 250px;
+        }
+
+        code {
+            background: #eee;
+            padding: 2px 4px;
+        }
+
+        pre {
+            background: #222;
+            color: white;
+            padding: 15px;
+            overflow-x: auto;
+        }
+
+        footer {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>HTML5 Demo Website</h1>
+    <p>This page demonstrates most common HTML tags.</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#text">Text</a></li>
+        <li><a href="#lists">Lists</a></li>
+        <li><a href="#table">Table</a></li>
+        <li><a href="#form">Form</a></li>
+        <li><a href="#media">Media</a></li>
+    </ul>
+</nav>
+
+<main>
+
+<section id="text">
+    <h2>Text Elements</h2>
+
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+
+    <p>This is a paragraph.</p>
+
+    <strong>Strong Text</strong><br>
+    <b>Bold Text</b><br>
+    <em>Emphasized Text</em><br>
+    <i>Italic Text</i><br>
+    <u>Underlined Text</u><br>
+    <mark>Highlighted Text</mark><br>
+    <small>Small Text</small><br>
+    <del>Deleted Text</del><br>
+    <ins>Inserted Text</ins><br>
+
+    H<sub>2</sub>O<br>
+    x<sup>2</sup><br>
+
+    <blockquote>
+        This is a blockquote example.
+    </blockquote>
+
+    <q>Short quotation.</q>
+
+    <hr>
+
+    <abbr title="HyperText Markup Language">HTML</abbr><br>
+
+    <address>
+        John Doe<br>
+        New York, USA
+    </address>
+
+    <p>Keyboard: <kbd>Ctrl + C</kbd></p>
+
+    <p>Variable: <var>x</var></p>
+
+    <p>Code: <code>console.log("Hello");</code></p>
+
+    <pre>
+function hello() {
+    console.log("Hello World");
+}
+    </pre>
+
+</section>
+
+<section id="lists">
+    <h2>Lists</h2>
+
+    <h3>Unordered List</h3>
+    <ul>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Banana</li>
+    </ul>
+
+    <h3>Ordered List</h3>
+    <ol>
+        <li>Wake Up</li>
+        <li>Study</li>
+        <li>Sleep</li>
+    </ol>
+
+    <h3>Description List</h3>
+    <dl>
+        <dt>HTML</dt>
+        <dd>Markup Language</dd>
+
+        <dt>CSS</dt>
+        <dd>Styling Language</dd>
+    </dl>
+
+</section>
+
+<section id="table">
+    <h2>Table</h2>
+
+    <table>
+
+        <caption>Student Details</caption>
+
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Alice</td>
+                <td>20</td>
+                <td>HTML</td>
+            </tr>
+
+            <tr>
+                <td>Bob</td>
+                <td>22</td>
+                <td>CSS</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="3">End of Table</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+</section>
+
+<section id="media">
+
+    <h2>Media</h2>
+
+    <img src="https://via.placeholder.com/250"
+         alt="Placeholder Image">
+
+    <br><br>
+
+    <audio controls>
+        <source src="sample.mp3" type="audio/mpeg">
+    </audio>
+
+    <br><br>
+
+    <video width="400" controls>
+        <source src="sample.mp4" type="video/mp4">
+    </video>
+
+    <br><br>
+
+    <iframe
+        width="500"
+        height="280"
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="YouTube video"
+        allowfullscreen>
+    </iframe>
+
+</section>
+
+<section id="form">
+
+    <h2>HTML Form</h2>
+
+    <form>
+
+        <label>Name</label>
+        <input type="text" placeholder="Enter Name">
+
+        <label>Email</label>
+        <input type="email">
+
+        <label>Password</label>
+        <input type="password">
+
+        <label>Phone</label>
+        <input type="tel">
+
+        <label>Age</label>
+        <input type="number">
+
+        <label>Date</label>
+        <input type="date">
+
+        <label>Time</label>
+        <input type="time">
+
+        <label>Color</label>
+        <input type="color">
+
+        <label>Range</label>
+        <input type="range">
+
+        <label>Website</label>
+        <input type="url">
+
+        <label>Search</label>
+        <input type="search">
+
+        <label>Upload File</label>
+        <input type="file">
+
+        <label>Gender</label>
+
+        <label><input type="radio" name="gender"> Male</label>
+        <label><input type="radio" name="gender"> Female</label>
+
+        <label>Skills</label>
+
+        <label><input type="checkbox"> HTML</label>
+        <label><input type="checkbox"> CSS</label>
+        <label><input type="checkbox"> JavaScript</label>
+
+        <label>Country</label>
+
+        <select>
+
+            <option>India</option>
+            <option>USA</option>
+            <option>Canada</option>
+
+        </select>
+
+        <label>Comments</label>
+
+        <textarea rows="5"></textarea>
+
+        <button type="submit">Submit</button>
+
+        <button type="reset">Reset</button>
+
+    </form>
+
+</section>
+
+<article>
+    <h2>Article</h2>
+    <p>This is an independent article section.</p>
+</article>
+
+<aside>
+    <h3>Aside</h3>
+    <p>Sidebar content goes here.</p>
+</aside>
+
+<section>
+
+    <h2>Details Element</h2>
+
+    <details>
+
+        <summary>Click to Expand</summary>
+
+        <p>This content is hidden until opened.</p>
+
+    </details>
+
+</section>
+
+<section>
+
+    <h2>Progress and Meter</h2>
+
+    Progress:
+    <progress value="70" max="100"></progress>
+
+    <br><br>
+
+    Meter:
+    <meter value="0.8">80%</meter>
+
+</section>
+
+<section>
+
+    <h2>Figure</h2>
+
+    <figure>
+
+        <img src="https://via.placeholder.com/300"
+             alt="Sample">
+
+        <figcaption>Example Figure Caption</figcaption>
+
+    </figure>
+
+</section>
+
+</main>
+
+<footer>
+
+    <p>&copy; 2026 HTML Demo Website</p>
+
+</footer>
+
+</body>
+</html>
